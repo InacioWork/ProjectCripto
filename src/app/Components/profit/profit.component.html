@@ -1,1 +1,162 @@
-<p>profit works!</p>
+<div class="container">
+  <h2 class="col-12" style="color: black;">Simulador de Lucro <i class="fas fa-chart-line" style="color: greenyellow;"></i></h2>
+  <br>
+  <div class="row" style="color: black;">
+    <div class="col-sm-6">
+      <label for="cryptoSelect">Criptomoeda:</label>
+      <select id="cryptoSelect" class="form-select shadow" [(ngModel)]="selectedCrypto" (change)="getCryptoPrice()"
+        style="width: 100%; max-height: 200px; overflow-y: auto;">
+        <option value="aave">Aave (AAVE)</option>
+        <option value="algorand">Algorand (ALGO)</option>
+        <option value="ark">Ark (ARK)</option>
+        <option value="binancecoin">Binance Coin (BNB)</option>
+        <option value="binance-usd">Binance USD (BUSD)</option>
+        <option value="bitcoin">Bitcoin (BTC)</option>
+        <option value="bitcoin-cash">Bitcoin Cash (BCH)</option> <!-- Adicionado Bitcoin Cash -->
+        <option value="cardano">Cardano (ADA)</option>
+        <option value="chainlink">Chainlink (LINK)</option>
+        <option value="chiliz">Chiliz (CHZ)</option>
+        <option value="compound">Compound (COMP)</option>
+        <option value="cosmos">Cosmos (ATOM)</option>
+        <option value="dai">DAI (DAI)</option>
+        <option value="dash">Dash (DASH)</option>
+        <option value="dogecoin">Dogecoin (DOGE)</option>
+        <option value="ecash">eCash (XEC)</option>
+        <option value="eos">EOS (EOS)</option>
+        <option value="ethereum">Ethereum (ETH)</option>
+        <option value="ethereum-classic">Ethereum Classic (ETC)</option>
+        <option value="filecoin">Filecoin (FIL)</option>
+        <option value="helium">Helium (HNT)</option>
+        <option value="harmony">Harmony (ONE)</option>
+        <option value="huobi-token">Huobi Token (HT)</option>
+        <option value="iota">IOTA (MIOTA)</option>
+        <option value="kava">Kava (KAVA)</option>
+        <option value="klaytn">Klaytn (KLAY)</option>
+        <option value="litecoin">Litecoin (LTC)</option>
+        <option value="monero">Monero (XMR)</option>
+        <option value="nano">Nano (NANO)</option>
+        <option value="neo">NEO (NEO)</option>
+        <option value="pepe">Pepe (PEPE)</option>
+        <option value="polkadot">Polkadot (DOT)</option>
+        <option value="ripple">Ripple (XRP)</option>
+        <option value="shiba-inu">Shiba Inu (SHIB)</option>
+        <option value="solana">Solana (SOL)</option>
+        <option value="stellar">Stellar (XLM)</option>
+        <option value="tezos">Tezos (XTZ)</option>
+        <option value="theta-fuel">Theta Fuel (TFUEL)</option>
+        <option value="tether">Tether (USDT)</option>
+        <option value="tether-gold">Tether Gold (XAUT)</option>
+        <option value="tron">TRON (TRX)</option>
+        <option value="trust-wallet-token">Trust Wallet (TWT)</option>
+        <option value="uniswap">Uniswap (UNI)</option>
+        <option value="vechain">VeChain (VET)</option>
+        <option value="waves">Waves (WAVES)</option>
+      </select>
+    </div>
+    <div class="col-sm-6">
+      <label for="currencySelect">Moeda base:</label>
+      <select id="currencySelect" class="form-select shadow" [(ngModel)]="selectedCurrency" (change)="getCryptoPrice()"
+        style="width: 100%; max-height: 200px; overflow-y: auto;">
+        <option value="aed">United Arab Emirates Dirham (AED)</option>
+        <option value="ars">Argentine Peso (ARS)</option>
+        <option value="aud">Australian Dollar (AUD)</option>
+        <option value="brl">Brazilian Real (BRL)</option>
+        <option value="cad">Canadian Dollar (CAD)</option>
+        <option value="chf">Swiss Franc (CHF)</option>
+        <option value="clp">Chilean Peso (CLP)</option>
+        <option value="cny">Chinese Yuan (CNY)</option>
+        <option value="czk">Czech Koruna (CZK)</option>
+        <option value="dkk">Danish Krone (DKK)</option>
+        <option value="eur">Euro (EUR)</option>
+        <option value="gbp">British Pound (GBP)</option>
+        <option value="hkd">Hong Kong Dollar (HKD)</option>
+        <option value="huf">Hungarian Forint (HUF)</option>
+        <option value="idr">Indonesian Rupiah (IDR)</option>
+        <option value="ils">Israeli Shekel (ILS)</option>
+        <option value="inr">Indian Rupee (INR)</option>
+        <option value="jpy">Japanese Yen (JPY)</option>
+        <option value="krw">South Korean Won (KRW)</option>
+        <option value="mxn">Mexican Peso (MXN)</option>
+        <option value="myr">Malaysian Ringgit (MYR)</option>
+        <option value="nok">Norwegian Krone (NOK)</option>
+        <option value="nzd">New Zealand Dollar (NZD)</option>
+        <option value="php">Philippine Peso (PHP)</option>
+        <option value="pln">Polish Złoty (PLN)</option>
+        <option value="rub">Russian Ruble (RUB)</option>
+        <option value="sar">Saudi Riyal (SAR)</option>
+        <option value="sek">Swedish Krona (SEK)</option>
+        <option value="sgd">Singapore Dollar (SGD)</option>
+        <option value="thb">Thai Baht (THB)</option>
+        <option value="try">Turkish Lira (TRY)</option>
+        <option value="twd">Taiwanese Dollar (TWD)</option>
+        <option value="usd">United States Dollar (USD)</option>
+        <option value="zar">South African Rand (ZAR)</option>
+        <option value="vnd">Vietnamese Đồng (VND)</option>
+        <option value="thb">Thai Baht (THB)</option>
+        <option value="cad">Canadian Dollar (CAD)</option>
+        <option value="czk">Czech Koruna (CZK)</option>
+        <option value="aed">United Arab Emirates Dirham (AED)</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" style="color: black;">
+      <label for="cryptoPrice">Preço da Criptomoeda:</label>
+      <input id="cryptoPrice" type="number" [(ngModel)]="cryptoPrice">
+    </div>
+    <div class="col-12" style="color: black;">
+      <label for="investmentAmount">Investimento:</label>
+      <input id="investmentAmount" type="number" [(ngModel)]="investmentAmount" (input)="calculatePotentialProfit()">
+    </div>
+    <div class="col-12" style="color: black;">
+      <label for="futureBitcoinPrice">Futuro preço (Cripto):</label>
+      <input id="futureBitcoinPrice" type="number" [(ngModel)]="futureBitcoinPrice"
+        (input)="calculatePotentialProfit()">
+    </div>
+    <div class="col-12 result">
+      <h1 *ngIf="potentialProfit >= 0" class="profit-icon">
+        <i class="fa fa-thumbs-o-up" style="color: green;"></i>
+        Win: +{{ potentialProfit | number:'1.2-2' }}
+      </h1>
+      <h1 *ngIf="potentialProfit < 0" class="loss-icon">
+        <i class="fa fa-thumbs-o-down" style="color: red;"></i>
+        Loss: {{ potentialProfit | number:'1.2-2' }}
+      </h1>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container-info">
+  <h2 class="col-12" style="color: black;">Como usar?</h2>
+  <br>
+  <p style="color: black;">
+    <b> - </b> Bem-vindo ao Simulador de Lucro! Esta ferramenta foi projetada para ajudá-lo a calcular o potencial de
+    lucro ou perda em seus investimentos em criptomoedas. Com base nos dados fornecidos, você pode obter uma estimativa
+    do retorno financeiro que poderia obter no futuro.
+  </p>
+  <p style="color: black;">
+    <b> - </b> A funcionalidade do simulador é bastante simples. Primeiro, você seleciona a criptomoeda de sua escolha a
+    partir da lista fornecida. Em seguida, escolhe a moeda base na qual deseja realizar o cálculo. Isso permite que você
+    compare o valor da criptomoeda em diferentes moedas e tome decisões mais informadas.
+  </p>
+  <p style="color: black;">
+    <b> - </b> Após selecionar as moedas, você insere o preço atual da criptomoeda e o valor do investimento que
+    pretende fazer. Com base nesses dados, o simulador calculará automaticamente o potencial de lucro ou perda com base
+    em um preço futuro desejado da criptomoeda.
+  </p>
+  <p style="color: black;">
+    <b> - </b> Uma vez que todos os valores sejam preenchidos, o resultado será exibido na tela. Se o potencial de lucro
+    for positivo, você verá um ícone de "Win" (+) seguido do valor estimado do lucro. Caso o potencial de lucro seja
+    negativo, você verá um ícone de "Loss" (-) seguido do valor estimado da perda.
+  </p>
+  <p style="color: black;">
+    <b> - </b> Este simulador é uma ferramenta útil para ajudar a tomar decisões informadas sobre seus investimentos em
+    criptomoedas. Lembre-se de que os valores fornecidos são estimativas e não garantias de lucro real. É importante
+    realizar pesquisas adicionais e consultar profissionais financeiros antes de tomar qualquer decisão de investimento.
+  </p>
+  <p style="color: black;">
+    <b> - </b> Experimente o Simulador de Lucro e descubra o potencial de ganhos ou perdas em seus investimentos em
+    criptomoedas!
+  </p>
+</div>

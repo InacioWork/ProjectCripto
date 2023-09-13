@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
 
   loadCryptoNews() {
     const apiKey = '60afae4496cf4224b143430b295139e3';
-    const pageSize = 16; // Define o número máximo de notícias a serem obtidas
+    const pageSize = 12; // Define o número máximo de notícias a serem obtidas
 
     this.http
       .get(`https://newsapi.org/v2/everything?q=crypto&pageSize=${pageSize}&apiKey=${apiKey}`)

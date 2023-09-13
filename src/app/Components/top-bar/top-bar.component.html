@@ -1,1 +1,52 @@
-<p>top-bar works!</p>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+  <a class="navbar-brand" href="#" routerLink="/">
+    <img class="logo logo-righ" src="assets/bitcoin.png" style="cursor: pointer;" routerLink="/">
+  </a>
+  <button class="navbar-toggler" type="button" (click)="toggleCollapse()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse" [ngClass]="{'show': !isCollapsed}" style="outline: none;">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/" routerLinkActive="active-link" (mouseenter)="expandIcon6 = true"
+          (mouseleave)="expandIcon6 = false" [ngStyle]="{ 'transform': expandIcon6 ? 'scale(1.2)' : 'none' }">
+          <i class="fas fa-home"></i> Inicio
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="profit" routerLinkActive="active-link"
+          (mouseenter)="expandIcon1 = true" (mouseleave)="expandIcon1 = false"
+          [ngStyle]="{ 'transform': expandIcon1 ? 'scale(1.2)' : 'none' }">
+          <i class="fas fa-chart-line" style="color: greenyellow;"></i> Profit cripto
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="cripto" routerLinkActive="active-link"
+          (mouseenter)="expandIcon2 = true" (mouseleave)="expandIcon2 = false"
+          [ngStyle]="{ 'transform': expandIcon2 ? 'scale(1.2)' : 'none' }">
+          <i class="fab fa-bitcoin" style="color: orange;"></i> Conversor de cripto
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="calculadora" routerLinkActive="active-link"
+          (mouseenter)="expandIcon3 = true" (mouseleave)="expandIcon3 = false"
+          [ngStyle]="{ 'transform': expandIcon3 ? 'scale(1.2)' : 'none' }">
+          <i class="fas fa-calculator" style="color: #007bff;"></i> Calculadora
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="conversor" routerLinkActive="active-link"
+          (mouseenter)="expandIcon4 = true" (mouseleave)="expandIcon4 = false"
+          [ngStyle]="{ 'transform': expandIcon4 ? 'scale(1.2)' : 'none' }">
+          <i class="fas fa-exchange-alt" style="color: blueviolet;"></i> Conversor
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="juros" routerLinkActive="active-link" (mouseenter)="expandIcon5 = true"
+          (mouseleave)="expandIcon5 = false" [ngStyle]="{ 'transform': expandIcon5 ? 'scale(1.2)' : 'none' }">
+          <i class="fas fa-percent" style="color: black;"></i> Calculadora de juros
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

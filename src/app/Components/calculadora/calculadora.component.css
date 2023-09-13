@@ -1,0 +1,156 @@
+.container {
+  max-width: 500px;
+  margin: 10vh auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to bottom, #695555, #ad5858);
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px black;
+  outline: none;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+
+.currency{
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px black;
+  outline: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.operator {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.clear, .equal {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.clear:hover, .equal:hover {
+  background-color: #f24a4a;
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin: 5vh auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 100px;
+  }
+
+  label {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    height: auto;
+    padding: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-top: 150px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin-top: 150px;
+  }
+}
+
+.container-info {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to bottom, #ffffff, #f1f1f1);
+  border: 1px solid #ccc;
+  margin-top: -70px; /* Ajuste o valor negativo conforme necessário */
+}
+
+.container-info {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to bottom, #ffffff, #f1f1f1);
+  border: 1px solid #ccc;
+}
+
+.container-info h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container-info p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.container-info a:hover {
+  text-decoration: underline;
+}
+

@@ -1,1 +1,37 @@
-<p>calculadora works!</p>
+<div class="container">
+  <div class="calculator">
+    <input type="text" [(ngModel)]="displayValue">
+    <div class="buttons">
+      <button class="operator" (click)="appendToDisplay('+')">+</button>
+      <button (click)="appendToDisplay('7')">7</button>
+      <button (click)="appendToDisplay('8')">8</button>
+      <button (click)="appendToDisplay('9')">9</button>
+      <button class="operator" (click)="appendToDisplay('-')">-</button>
+      <button (click)="appendToDisplay('4')">4</button>
+      <button (click)="appendToDisplay('5')">5</button>
+      <button (click)="appendToDisplay('6')">6</button>
+      <button class="operator" (click)="appendToDisplay('*')">*</button>
+      <button (click)="appendToDisplay('1')">1</button>
+      <button (click)="appendToDisplay('2')">2</button>
+      <button (click)="appendToDisplay('3')">3</button>
+      <button class="operator" (click)="appendToDisplay('/')">/</button>
+      <button (click)="appendToDisplay('0')">0</button>
+      <button class="clear" (click)="clear()">C</button>
+      <button class="clear" (click)="clearLastDigit()">CE</button>
+      <button class="equal" (click)="calculate()">=</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-info text-center" style="text-align: left;">
+  <h2>Como usar?</h2>
+<br>
+  <p><b> - </b>Esta é uma calculadora simples que permite realizar operações matemáticas básicas.</p>
+  <p><b> - </b>Ao inserir os números e pressionar os botões de operação, você pode realizar adição (+), subtração (-),
+    multiplicação (*) e divisão (/).</p>
+  <p><b> - </b>A caixa de texto exibe o valor atual que está sendo digitado ou o resultado da operação.</p>
+  <p><b> - </b>Os botões numéricos de 0 a 9 permitem inserir os valores desejados na calculadora.</p>
+  <p><b> - </b>O botão "C" limpa todos os valores, reiniciando a calculadora.</p>
+  <p><b> - </b>O botão "CE" apaga o último dígito inserido, permitindo correções rápidas.</p>
+  <p><b> - </b>O botão "=" realiza o cálculo com base nos valores inseridos e exibe o resultado na caixa de texto.</p>
+</div>

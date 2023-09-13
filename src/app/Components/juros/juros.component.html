@@ -1,1 +1,50 @@
-<p>juros works!</p>
+<div class="container">
+  <h3>Calculadora de Juros Compostos <i class="fas fa-percent" style="color: red;"></i></h3>
+<br>
+  <div>
+    <label for="principal">Valor investido:</label>
+    <input type="number" id="principal" [(ngModel)]="principal" class="shadow" required
+      [ngClass]="{ 'empty-field': !principal }">
+  </div>
+
+  <div>
+    <label for="interestRate">Taxa de Juros (%):</label>
+    <input type="number" id="interestRate" [(ngModel)]="interestRate" class="shadow" required
+      [ngClass]="{ 'empty-field': !interestRate }">
+  </div>
+
+  <div>
+    <label for="timePeriod">Período (anual):</label>
+    <input type="number" id="timePeriod" [(ngModel)]="timePeriod" class="shadow" required
+      [ngClass]="{ 'empty-field': !timePeriod }">
+  </div>
+
+  <button (click)="calculateCompoundInterest(modalTemplate)" class="calculate-button">Calcular</button>
+
+  <ng-template #modalTemplate>
+    <div class="modal-header">
+      <h4 class="modal-title" style="position: relative; margin: 0 auto 0 auto;">Resultado dos Juros Compostos</h4>
+      <button type="button" class="close" (click)="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" style="position: relative; margin: 0 auto 0 auto;">
+      <h3>Total em juros: <h2>{{ result.toFixed(2) }}</h2>
+      </h3>
+    </div>
+  </ng-template>
+</div>
+
+<div class="container-info">
+  <h2>Como usar? </h2>
+  <br>
+  <p><b> - </b>Esta é uma calculadora de juros compostos que permite calcular o valor acumulado com base no valor investido,
+    taxa de
+    juros e período.</p>
+  <p><b> - </b>Todos campos são obrigatórios para o calculo.</p>
+  <p><b> - </b>Para utilizar a calculadora, siga os passos abaixo:</p>
+  <ol>
+    <li>Digite o valor que irá investir.</li>
+    <li>Digite a taxa de juros anual (Comum ser 13% ao ano).</li>
+    <li>Digite o total de anos que passará com dinheiro investido.</li>
+    <li>Após preencher todos os campos de um click em  "Calcular".</li>
+  </ol>
+  <div>

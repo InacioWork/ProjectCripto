@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { PaginatorModule } from 'primeng/paginator';
+import { TableModule } from 'primeng/table';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,11 +37,20 @@ import { SobreComponent } from './Components/footer/sobre/sobre.component';
     ContatoComponent,
     PatrociniosComponent,
     PrivacidadeComponent,
-    SobreComponent
+    SobreComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PaginatorModule,
+    TableModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ModalModule.forRoot(),
+    CommonModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

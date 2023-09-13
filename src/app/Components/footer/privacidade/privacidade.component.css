@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 50px); /* Subtrai a altura da top bar da altura total da viewport */
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  margin: 20px auto;
+}
+
+.content {
+  max-width: 600px;
+  padding: 20px;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.top-bar {
+  height: 50px;
+  /* Estilos da top bar */
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+}

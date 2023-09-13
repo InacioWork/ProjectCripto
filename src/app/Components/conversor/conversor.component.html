@@ -1,1 +1,41 @@
-<p>conversor works!</p>
+<div class="container">
+  <h2>Conversor de Moedas <i class="fas fa-coins" style="color: rgb(182, 182, 55);"></i></h2>
+  <br>
+  <div class="input-container">
+    <input type="number" [(ngModel)]="amount" placeholder="Valor" (ngModelChange)="convert()">
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-5">
+      <select [(ngModel)]="fromCurrency" class="form-select shadow">
+        <option *ngFor="let currency of currencies" [value]="currency.code"
+          [selected]="currency.code === 'USD' || currency.code === 'BRL'">{{ getCurrencyOptionText(currency) }}</option>
+      </select>
+    </div>
+    <div class="col-md-2 d-flex align-items-center justify-content-center">
+      <button (click)="swapCurrencies()" class="btn btn-primary"><i class="fas fa-exchange-alt"
+          aria-hidden="true"></i></button>
+    </div>
+    <div class="col-md-5">
+      <select [(ngModel)]="toCurrency" class="form-select shadow">
+        <option *ngFor="let currency of currencies" [value]="currency.code"
+          [selected]="currency.code === 'BRL' || currency.code === 'USD'">{{ getCurrencyOptionText(currency) }}</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  <div class="input-container">
+    <input type="number" [(ngModel)]="convertedAmount" placeholder="Valor convertido" [disabled]="true"
+      class="form-control form-control-sm center-placeholder" step="0.01" [value]="convertedAmount | number:'1.2-2'">
+  </div>
+</div>
+
+<div class="container-info">
+  <h2>Como usar? </h2>
+  <p><b> - </b>Este é um conversor de moedas que permite converter o valor de uma moeda para outra.</p>
+  <p><b> - </b>Você pode inserir o valor desejado na caixa de texto e selecionar as moedas de origem e destino nos respectivos menus suspensos.</p>
+  <p><b> - </b>Os valores disponíveis para conversão são atualizados automaticamente com base nas taxas de câmbio mais recentes.</p>
+  <p><b> - </b>Para inverter as moedas de origem e destino, você pode clicar no botão de troca (representado por uma seta).</p>
+  <p><b> - </b>O valor convertido será exibido na caixa de texto abaixo, com precisão de até duas casas decimais.</p>
+</div>
+

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="table-cripto">
-    <h1>Top criptomoedas:</h1>
+    <h1 style="color: dimgrey;">Top criptomoedas:</h1>
     <p-table #dt [value]="cryptoList" [paginator]="true" [rows]="pageSize" [totalRecords]="totalRecords" class="crypto-table">
       <ng-template pTemplate="header">
         <tr>
@@ -11,7 +11,7 @@
         </tr>
         <tr>
           <th>Search</th>
-          <th><input #nameFilter pInputText type="text" (input)="filterByName(nameFilter.value)" /></th>
+          <th><input #nameFilter pInputText type="text" (input)="filterByName(nameFilter.value)" style="width: 270px;" /></th>
           <th></th>
           <th></th>
         </tr>
@@ -36,36 +36,17 @@
   </div>
 
   <br>
-
-  <h2>Últimas notícias sobre criptomoedas:</h2>
-
-  <div class="news-container" *ngIf="articles">
-    <div class="news-item" *ngFor="let article of articles">
-      <div class="news-title">{{ article.title }}</div>
-      <div class="news-description">{{ article.description }}</div>
-      <div class="news-image">
-        <img [src]="article.urlToImage" alt="Imagem da notícia">
-      </div>
-      <div class="news-source">
-        Fonte: {{ article.source.name }}
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="!articles" class="loading">
-    <p>Carregando notícias...</p>
-  </div>
-
+  <br>
   <br>
 
   <div class="welcome">
-    <h1 class="site-title">Funcionalidades:</h1>
+    <h1 class="site-title" style="color: dimgrey;">Funcionalidades:</h1>
     <br>
     <p>Aqui você encontrará uma variedade de recursos e funcionalidades para tornar a sua experiência ainda mais completa. Vamos dar uma olhada nas funcionalidades apresentadas na nossa barra superior:</p>
     <br>
     <ul class="feature-list">
       <li class="feature-item">
-        <i class="feature-icon fa-brands fa-btc" style="color: orange;"></i>
+        <i class="fab fa-bitcoin" style="color: orange; margin-right: 10px;"></i>
         <span class="feature-text"><b>Conversor de Cripto:</b> Precisa converter uma criptomoeda para outra? Nosso Conversor de Cripto oferece uma maneira fácil e rápida de realizar conversões entre diferentes moedas digitais. Mantenha-se atualizado com as taxas de câmbio e faça conversões precisas.</span>
         <div class="image-container">
           <img src="assets/conversor1.png" alt="Conversor de Cripto" routerLink="cripto" (mouseenter)="expandImage1 = true" (mouseleave)="expandImage1 = false"
@@ -106,4 +87,30 @@
       </li>
     </ul>
   </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div>
+    <h2 style="color: dimgrey;">Últimas notícias sobre criptomoedas:</h2>
+
+  <div class="news-container" *ngIf="articles">
+    <div class="news-item" *ngFor="let article of articles">
+      <div class="news-title">{{ article.title }}</div>
+      <div class="news-description">{{ article.description }}</div>
+      <div class="news-image">
+        <img [src]="article.urlToImage" alt="Imagem da notícia">
+      </div>
+      <div class="news-source">
+        Fonte: {{ article.source.name }}
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!articles" class="loading">
+    <p>Carregando notícias...</p>
+  </div>
+  </div>
+
 </div>

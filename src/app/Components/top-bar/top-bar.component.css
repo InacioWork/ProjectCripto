@@ -1,0 +1,150 @@
+.navbar {
+  padding: 0;
+  background-image: linear-gradient(to bottom, #695555, #ad5858);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin-left: 15rem;
+}
+
+.navbar-nav li {
+  margin-right: 30px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+  margin: 2.2rem;
+}
+
+.navbar-nav li {
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+.navbar-nav li a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    background-color: #24252A;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #ffffff;
+  }
+
+  .logo {
+    width: 100px;
+    float: inline-start;
+  }
+
+  .navbar-collapse {
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    margin-top: 10px;
+    margin: 0rem 1rem;
+  }
+
+  .navbar-nav li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .navbar-nav li a {
+    color: #ffffff;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    background-color: #24252A;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #ffffff;
+  }
+
+  .navbar-brand {
+    margin-left: 0rem;
+  }
+
+  .navbar-collapse {
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    margin-top: 10px;
+    margin: 0rem 1rem;
+  }
+
+  .navbar-nav li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .navbar-nav li a {
+    color: #ffffff;
+    font-weight: bold;
+  }
+}
+
+nav {
+  background-color: #24252A;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.navbar-nav li {
+  margin-right: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+a:hover {
+  color: rgb(148, 176, 189);
+}
+
+.nav-link{
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transform: scale(1.2);
+}
