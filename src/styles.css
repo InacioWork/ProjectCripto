@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primeira-color: red;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Estilos para a barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a8a2a2;
+  /* Cor da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2e2323;
+  /* Cor da barra de rolagem quando hover */
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    top: 50%;
+    /* Ajuste a posição conforme necessário */
+    transform: translateY(-50%);
+  }
+}
+
+.modal-content {
+  top: 350px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

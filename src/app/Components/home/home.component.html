@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="table-cripto">
+    <h1>Top criptomoedas:</h1>
+    <p-table #dt [value]="cryptoList" [paginator]="true" [rows]="pageSize" [totalRecords]="totalRecords" class="crypto-table">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Rank</th>
+          <th>Filter by Name</th>
+          <th>Symbol</th>
+          <th>Price (USD)</th>
+        </tr>
+        <tr>
+          <th>Search</th>
+          <th><input #nameFilter pInputText type="text" (input)="filterByName(nameFilter.value)" /></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-crypto let-rowIndex="rowIndex">
+        <tr [ngClass]="{'separator-row': rowIndex !== 0}">
+          <td>{{ crypto.market_cap_rank }}</td>
+          <td>
+            <img [src]="crypto.image" alt="{{ crypto.name }} Icon" class="crypto-icon" />
+            {{ crypto.name }}
+          </td>
+          <td>{{ crypto.symbol.toUpperCase() }}</td>
+          <td>${{ crypto.current_price }}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="paginator">
+        <div class="paginator-container">
+          <p-paginator [rows]="pageSize" [totalRecords]="totalRecords" (onPageChange)="onPageChange($event)" [class]="{'paginator-compact': totalRecords <= pageSize}"></p-paginator>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <br>
+
+  <h2>Últimas notícias sobre criptomoedas:</h2>
+
+  <div class="news-container" *ngIf="articles">
+    <div class="news-item" *ngFor="let article of articles">
+      <div class="news-title">{{ article.title }}</div>
+      <div class="news-description">{{ article.description }}</div>
+      <div class="news-image">
+        <img [src]="article.urlToImage" alt="Imagem da notícia">
+      </div>
+      <div class="news-source">
+        Fonte: {{ article.source.name }}
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!articles" class="loading">
+    <p>Carregando notícias...</p>
+  </div>
+
+  <br>
+
+  <div class="welcome">
+    <h1 class="site-title">Funcionalidades:</h1>
+    <br>
+    <p>Aqui você encontrará uma variedade de recursos e funcionalidades para tornar a sua experiência ainda mais completa. Vamos dar uma olhada nas funcionalidades apresentadas na nossa barra superior:</p>
+    <br>
+    <ul class="feature-list">
+      <li class="feature-item">
+        <i class="feature-icon fa-brands fa-btc" style="color: orange;"></i>
+        <span class="feature-text"><b>Conversor de Cripto:</b> Precisa converter uma criptomoeda para outra? Nosso Conversor de Cripto oferece uma maneira fácil e rápida de realizar conversões entre diferentes moedas digitais. Mantenha-se atualizado com as taxas de câmbio e faça conversões precisas.</span>
+        <div class="image-container">
+          <img src="assets/conversor1.png" alt="Conversor de Cripto" routerLink="cripto" (mouseenter)="expandImage1 = true" (mouseleave)="expandImage1 = false"
+          [ngStyle]="{ 'transform': expandImage1 ? 'scale(1.2)' : 'none' }" />
+        </div>
+      </li>
+      <li class="feature-item">
+        <i class="feature-icon fas fa-chart-line" style="color: greenyellow;"></i>
+        <span class="feature-text"><b>Profit Cripto:</b> Se você está interessado em investimentos em criptomoedas, temos uma seção dedicada especialmente a isso. Acesse o Profit Cripto e obtenha informações atualizadas sobre o mercado e dados essenciais para tomar decisões embasadas.</span>
+        <div class="image-container">
+          <img src="assets/Profit.png" alt="Profit Cripto" routerLink="profit" (mouseenter)="expandImage2 = true" (mouseleave)="expandImage2 = false"
+          [ngStyle]="{ 'transform': expandImage2 ? 'scale(1.2)' : 'none' }" />
+        </div>
+      </li>
+      <li class="feature-item">
+        <i class="feature-icon fas fa-exchange-alt" style="color: blueviolet;"></i>
+        <span class="feature-text"><b>Conversor:</b> Além das criptomoedas, nosso site também oferece um Conversor de moedas convencionais. Converta facilmente entre diferentes moedas internacionais, obtenha taxas de câmbio atualizadas e facilite suas transações financeiras.</span>
+        <div class="image-container">
+          <img src="assets/moeda.png" alt="Conversor" routerLink="conversor" (mouseenter)="expandImage3 = true" (mouseleave)="expandImage3 = false"
+          [ngStyle]="{ 'transform': expandImage3 ? 'scale(1.2)' : 'none' }"/>
+        </div>
+      </li>
+      <li class="feature-item">
+        <i class="feature-icon fas fa-calculator" style="color: #007bff;"></i>
+        <span class="feature-text"><b>Calculadora:</b> Realize operações matemáticas básicas e complexas, economizando tempo e esforço. Facilite seu dia a dia com nossa Calculadora.</span>
+        <div class="image-container">
+          <img src="assets/calculadora.png" alt="Calculadora" routerLink="calculadora" (mouseenter)="expandImage4 = true" (mouseleave)="expandImage4 = false"
+          [ngStyle]="{ 'transform': expandImage4 ? 'scale(1.2)' : 'none' }"/>
+        </div>
+      </li>
+      <li class="feature-item">
+        <i class="feature-icon fas fa-percent"></i>
+        <span class="feature-text"><b>Calculadora de Juros:</b> Se você está planejando um empréstimo ou investimento e precisa calcular juros, nossa Calculadora de Juros é perfeita para você. Obtenha cálculos precisos e saiba exatamente o impacto dos juros em suas finanças.</span>
+        <div class="image-container">
+          <img src="assets/juros.png" alt="Calculadora de Juros" routerLink="juros" (mouseenter)="expandImage5 = true" (mouseleave)="expandImage5 = false"
+          [ngStyle]="{ 'transform': expandImage5 ? 'scale(1.2)' : 'none' }"/>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
